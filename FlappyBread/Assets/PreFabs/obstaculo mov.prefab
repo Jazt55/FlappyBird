@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8357730280905923541}
-  - component: {fileID: 8357730280905923540}
+  - component: {fileID: 8318459253951236003}
   m_Layer: 0
   m_Name: obstaculo mov
   m_TagString: obstaculo
@@ -34,7 +34,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8357730280905923540
+--- !u!114 &8318459253951236003
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,10 +43,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8357730280905923543}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 865b493c98d872d4ca88bc98f68b6dab, type: 3}
+  m_Script: {fileID: 11500000, guid: 989d912e4afd4724a922dfc2ddebde53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedE: 3
+  direcao: 1
+  speedY: 1.1
+  speedX: 4
+  tempo: 0
+  delay: 1.2
+  i: 0
 --- !u!1 &8357730281342907513
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,8 +78,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8357730281342907513}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.35, z: 0}
-  m_LocalScale: {x: 1.3708, y: 5.311631, z: 1}
+  m_LocalPosition: {x: 0, y: 3.3796, z: 0}
+  m_LocalScale: {x: 1.3708, y: 5.252672, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8357730280905923541}
@@ -184,8 +189,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8357730281715431487}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.53, z: 0}
-  m_LocalScale: {x: 1.3708702, y: 5.171663, z: 1}
+  m_LocalPosition: {x: 0, y: -4.9142, z: 0}
+  m_LocalScale: {x: 1.3708702, y: 4.403154, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8357730280905923541}
