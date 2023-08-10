@@ -25,6 +25,7 @@ public class obsMov : MonoBehaviour
         if (gM.isGameOver == false)
         {
             transform.position = new Vector3(transform.position.x - speedX * Time.deltaTime, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y + speedY * direcao * Time.deltaTime, transform.position.z);
         }
 
         if (transform.position.x <= -12)
@@ -32,10 +33,10 @@ public class obsMov : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (gM.isGameOver == false)
-        {
-            transform.position = new Vector3(transform.position.x , transform.position.y + speedY * direcao * Time.deltaTime, transform.position.z);
-        }
+        
+        
+            
+        
 
         if (tempo <= Time.time )
         {

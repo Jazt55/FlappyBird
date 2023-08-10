@@ -7,7 +7,7 @@ public class PlayerMov : MonoBehaviour
     private Rigidbody2D playerRb;
     public float forcaPulo;
     public GameManager gM;
-    public int pontuacao;
+    
 
     
     // Start is called before the first frame update
@@ -15,7 +15,7 @@ public class PlayerMov : MonoBehaviour
     {
         gM = GameObject.Find("GameManager").GetComponent<GameManager>();
         playerRb = GetComponent<Rigidbody2D>();
-        playerRb.AddForce(new Vector2(0, forcaPulo), ForceMode2D.Impulse);
+        playerRb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class PlayerMov : MonoBehaviour
     {
         if (collision.gameObject.tag == "Manteiga")
         {
-            pontuacao++;
+            gM.pontuacao++;
         }
     }
 }
