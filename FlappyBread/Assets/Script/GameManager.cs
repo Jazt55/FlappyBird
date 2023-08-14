@@ -7,12 +7,15 @@ public class GameManager : MonoBehaviour
 {
     public GameObject[] enemy;
     public GameObject manteiga;
+    public GameObject garfo;
     public bool isGameOver;
     public float delay;
     private float tempoParaGerar;
     public float delay2;
     private float tempoParaGerar2;
     public int pontuacao = 1;
+    private float tempoParaGerar3;
+    public float delay3;
 
     public TextMeshProUGUI pontuacaoCanvas;
 
@@ -21,16 +24,17 @@ public class GameManager : MonoBehaviour
     {
         //tempoParaGerar = Time.time + delay;
         tempoParaGerar2 = Time.time + delay2;
-
-    }
+        tempoParaGerar3 = Time.time + delay3;
+    } 
 
     // Update is called once per frame
     void Update()
     {
         pontuacaoCanvas.text = pontuacao.ToString() + "/10";
         
-        string pontuacaoV = pontuacao.ToString();
-        //delay = Random.Range(2, 5);
+        
+        delay3 = Random.Range(2, 5);
+
         if (tempoParaGerar2 <= Time.time && isGameOver == false)
         {
             Instantiate(manteiga, new Vector3(19, Random.Range(-2, 2),0), Quaternion.identity);
@@ -46,6 +50,11 @@ public class GameManager : MonoBehaviour
         if(pontuacao >= 10)
         {
             isGameOver = true;
+        }
+        if (tempoParaGerar3 <= Time.time && isGameOver == false)
+        {
+            Instantiate(garfo, new Vector3(25, Random.Range(-3, 1.5f), 0), Quaternion.identity);
+            tempoParaGerar3 = Time.time + delay3;
         }
 
     }
