@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6699985742238661085}
   - component: {fileID: 6699985742238661084}
-  - component: {fileID: 6699985742238661087}
   - component: {fileID: 6699985742238661082}
+  - component: {fileID: 6630172655944053551}
   m_Layer: 0
   m_Name: coin
   m_TagString: Manteiga
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 6699985742238661086}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.91, y: 1.24, z: 0}
-  m_LocalScale: {x: 0.5974898, y: 0.6127707, z: 1.5038}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -74,9 +74,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
-  m_Color: {r: 1, g: 0.9935299, b: 0, a: 1}
+  m_SortingOrder: 10
+  m_Sprite: {fileID: 21300000, guid: a5391ca01eb7c804a86ba35d7dbdd5aa, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -86,22 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &6699985742238661087
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6699985742238661086}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!114 &6699985742238661082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,3 +99,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedE: 4
+--- !u!60 &6630172655944053551
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6699985742238661086}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 5.49, y: 5.54, z: 4.36, w: 12.84}
+    pivot: {x: 0.5623569, y: 0.3087803}
+    oldSize: {x: 10.8, y: 19.2}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.2865454, y: 0.20141785}
+      - {x: 0.2765454, y: 0.25141785}
+      - {x: 0.17654541, y: 0.36141783}
+      - {x: 0.1565454, y: 0.37141785}
+      - {x: -0.0034545898, y: 0.37141785}
+      - {x: -0.15345459, y: 0.35141784}
+      - {x: -0.3834546, y: 0.26141784}
+      - {x: -0.48345459, y: 0.17141785}
+      - {x: -0.48345459, y: -0.25858214}
+      - {x: -0.3834546, y: -0.32858214}
+      - {x: -0.31345457, y: -0.33858216}
+      - {x: 0.00654541, y: -0.33858216}
+      - {x: 0.22654541, y: -0.25858214}
+      - {x: 0.2865454, y: -0.18858215}

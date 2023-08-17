@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6788966498519491651}
   - component: {fileID: 6788966498519491649}
-  - component: {fileID: 6788966498519491650}
+  - component: {fileID: 6282949694319182531}
   m_Layer: 0
   m_Name: Quad Bot
   m_TagString: obstaculo
@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6788966498519491660}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.347, z: 0}
-  m_LocalScale: {x: 1.5846, y: 5.8652363, z: 1}
+  m_LocalPosition: {x: 0, y: -4.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6788966498819213340}
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 283c72a170805484e80b3264cda77591, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6788966498519491650
-BoxCollider2D:
+--- !u!60 &6282949694319182531
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -101,16 +101,49 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.7677727, y: 0.49345118}
+    oldSize: {x: 10.8, y: 19.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.5180554, y: -4.7042627}
+      - {x: 0.5080554, y: -3.9042625}
+      - {x: 0.4980554, y: -3.2742627}
+      - {x: 0.5080554, y: -2.8242626}
+      - {x: 0.5380554, y: -2.6042626}
+      - {x: 0.5380554, y: -2.5042627}
+      - {x: 0.47805542, y: -2.4042625}
+      - {x: 0.4580554, y: -2.1342626}
+      - {x: 0.4580554, y: 1.6557373}
+      - {x: 0.44805542, y: 2.2757373}
+      - {x: 0.44805542, y: 2.5757372}
+      - {x: 0.41805542, y: 2.6057372}
+      - {x: 0.37805542, y: 2.6057372}
+      - {x: 0.28805542, y: 2.4857373}
+      - {x: -0.21194458, y: 1.7357373}
+      - {x: -0.41194457, y: 1.4057373}
+      - {x: -0.46194458, y: 0.5557373}
+      - {x: -0.48194456, y: 0.1657373}
+      - {x: -0.56194454, y: -1.6642627}
+      - {x: -0.5819446, y: -2.2642627}
+      - {x: -0.60194457, y: -2.7542627}
+      - {x: -0.61194456, y: -2.7742627}
+      - {x: -0.61194456, y: -2.8442626}
+      - {x: -0.5819446, y: -2.9242625}
+      - {x: -0.5819446, y: -5.6342626}
+      - {x: -0.5719446, y: -5.644263}
+      - {x: -0.5719446, y: -7.3542624}
+      - {x: -0.56194454, y: -8.344262}
+      - {x: -0.55194455, y: -9.084263}
+      - {x: -0.54194456, y: -9.474262}
+      - {x: 0.5380554, y: -9.474262}
+      - {x: 0.5380554, y: -7.0242624}
+      - {x: 0.5280554, y: -7.0142627}
+      - {x: 0.5280554, y: -5.8242626}
 --- !u!1 &6788966498819213342
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6788966498865925005}
   - component: {fileID: 6788966498865924995}
-  - component: {fileID: 6788966498865925004}
+  - component: {fileID: 8812276533789560227}
   m_Layer: 0
   m_Name: Quad Top
   m_TagString: obstaculo
@@ -184,8 +217,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6788966498865925006}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.9036, z: 0}
-  m_LocalScale: {x: 1.5846, y: 6.356055, z: 1}
+  m_LocalPosition: {x: 0, y: 6.45, z: 0}
+  m_LocalScale: {x: 1, y: -1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6788966498819213340}
@@ -232,8 +265,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 283c72a170805484e80b3264cda77591, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -243,8 +276,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6788966498865925004
-BoxCollider2D:
+--- !u!60 &8812276533789560227
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -259,13 +292,46 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    pivot: {x: 0.7677727, y: 0.49345118}
+    oldSize: {x: 10.8, y: 19.2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.5180554, y: -4.7042627}
+      - {x: 0.5080554, y: -3.9042625}
+      - {x: 0.4980554, y: -3.2742627}
+      - {x: 0.5080554, y: -2.8242626}
+      - {x: 0.5380554, y: -2.6042626}
+      - {x: 0.5380554, y: -2.5042627}
+      - {x: 0.47805542, y: -2.4042625}
+      - {x: 0.4580554, y: -2.1342626}
+      - {x: 0.4580554, y: 1.6557373}
+      - {x: 0.44805542, y: 2.2757373}
+      - {x: 0.44805542, y: 2.5757372}
+      - {x: 0.41805542, y: 2.6057372}
+      - {x: 0.37805542, y: 2.6057372}
+      - {x: 0.28805542, y: 2.4857373}
+      - {x: -0.21194458, y: 1.7357373}
+      - {x: -0.41194457, y: 1.4057373}
+      - {x: -0.46194458, y: 0.5557373}
+      - {x: -0.48194456, y: 0.1657373}
+      - {x: -0.56194454, y: -1.6642627}
+      - {x: -0.5819446, y: -2.2642627}
+      - {x: -0.60194457, y: -2.7542627}
+      - {x: -0.61194456, y: -2.7742627}
+      - {x: -0.61194456, y: -2.8442626}
+      - {x: -0.5819446, y: -2.9242625}
+      - {x: -0.5819446, y: -5.6342626}
+      - {x: -0.5719446, y: -5.644263}
+      - {x: -0.5719446, y: -7.3542624}
+      - {x: -0.56194454, y: -8.344262}
+      - {x: -0.55194455, y: -9.084263}
+      - {x: -0.54194456, y: -9.474262}
+      - {x: 0.5380554, y: -9.474262}
+      - {x: 0.5380554, y: -7.0242624}
+      - {x: 0.5280554, y: -7.0142627}
+      - {x: 0.5280554, y: -5.8242626}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -55,7 +56,11 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(garfo, new Vector3(25, Random.Range(-3, 1.5f), 0), Quaternion.identity);
             tempoParaGerar3 = Time.time + delay3;
-        }
+        }     
+    }
 
+    public void TrocarCena()
+    {
+        SceneManager.LoadScene(0);
     }
 }

@@ -7,7 +7,7 @@ public class PlayerMov : MonoBehaviour
     private Rigidbody2D playerRb;
     public float forcaPulo;
     public GameManager gM;
-    
+    double oi = 5.3;
 
     
     // Start is called before the first frame update
@@ -15,7 +15,7 @@ public class PlayerMov : MonoBehaviour
     {
         gM = GameObject.Find("GameManager").GetComponent<GameManager>();
         playerRb = GetComponent<Rigidbody2D>();
-        playerRb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+        playerRb.AddForce(new Vector2(0,  4), ForceMode2D.Impulse);
     }
 
     // Update is called once per frame
