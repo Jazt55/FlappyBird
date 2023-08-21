@@ -32,6 +32,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         pontuacaoCanvas.text = pontuacao.ToString() + "/10";
+        if(isGameOver == true)
+        {
+            TrocarCena2();
+        }
         
         
         delay3 = Random.Range(2, 5);
@@ -47,6 +51,7 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(enemy[Random.Range(0, enemy.Length)], new Vector3(16, Random.Range(-2,1), 0), Quaternion.identity);
             tempoParaGerar = Time.time + delay;
+           
         }
         if(pontuacao >= 10)
         {
@@ -62,5 +67,9 @@ public class GameManager : MonoBehaviour
     public void TrocarCena()
     {
         SceneManager.LoadScene(0);
+    }
+    public void TrocarCena2()
+    {
+        SceneManager.LoadScene(1);
     }
 }

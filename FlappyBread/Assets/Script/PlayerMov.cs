@@ -7,7 +7,7 @@ public class PlayerMov : MonoBehaviour
     private Rigidbody2D playerRb;
     public float forcaPulo;
     public GameManager gM;
-    double oi = 5.3;
+    
 
     
     // Start is called before the first frame update
