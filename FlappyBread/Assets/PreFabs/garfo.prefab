@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 7978462675760301501}
   m_Layer: 0
   m_Name: garfo
-  m_TagString: obstaculo
+  m_TagString: garfo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -18,11 +18,14 @@ public class GameManager : MonoBehaviour
     private float tempoParaGerar3;
     public float delay3;
 
+    public AudioSource gMaudio;
+
     public TextMeshProUGUI pontuacaoCanvas;
 
     // Start is called before the first frame update
     void Start()
     {
+        gMaudio = GetComponent<AudioSource>();
         //tempoParaGerar = Time.time + delay;
         tempoParaGerar2 = Time.time + delay2;
         tempoParaGerar3 = Time.time + delay3;

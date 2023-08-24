@@ -7,9 +7,10 @@ public class PlayerMov : MonoBehaviour
     private Rigidbody2D playerRb;
     public float forcaPulo;
     public GameManager gM;
-    
+    public AudioClip morteSom;
+    public AudioClip puloSom;
+    //public AudioClip
 
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,7 @@ public class PlayerMov : MonoBehaviour
         {
             playerRb.velocity = Vector2.zero;
             playerRb.AddForce(new Vector2(0, forcaPulo), ForceMode2D.Impulse);
+            gM.gMaudio.PlayOneShot(puloSom);
         }
        
     }
@@ -34,6 +36,8 @@ public class PlayerMov : MonoBehaviour
         if (collision.gameObject.tag == "obstaculo")
         {
             gM.isGameOver = true;
+            gM.gMaudio.PlayOneShot(morteSom);
+            
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -41,6 +45,7 @@ public class PlayerMov : MonoBehaviour
         if (collision.gameObject.tag == "Manteiga")
         {
             gM.pontuacao++;
+
         }
     }
 }
