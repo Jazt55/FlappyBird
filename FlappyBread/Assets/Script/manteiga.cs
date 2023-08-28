@@ -18,9 +18,13 @@ public class manteiga : MonoBehaviour
     {
       if(gM.isGameOver == false)
         {
-            transform.position = new Vector3(transform.position.x - speedE * Time.deltaTime, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x - gM.speedX * Time.deltaTime, transform.position.y, transform.position.z);
         }
-            
+
+        if (transform.position.x <= -12)
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

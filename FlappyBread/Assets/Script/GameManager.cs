@@ -18,6 +18,10 @@ public class GameManager : MonoBehaviour
     private float tempoParaGerar3;
     public float delay3;
 
+    public int upHarder;
+    public float speedX;
+    public float speedE;
+
     public AudioSource gMaudio;
 
     public TextMeshProUGUI pontuacaoCanvas;
@@ -34,10 +38,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pontuacaoCanvas.text = pontuacao.ToString() + "/10";
+        pontuacaoCanvas.text = pontuacao.ToString();// + "/10";
+
         if(isGameOver == true)
         {
-            TrocarCena2();
+            StartCoroutine("GameOver");
         }
         
         
@@ -56,9 +61,12 @@ public class GameManager : MonoBehaviour
             tempoParaGerar = Time.time + delay;
            
         }
-        if(pontuacao >= 10)
+        if(pontuacao >= upHarder)
         {
-            isGameOver = true;
+            speedX++;
+            speedE++;
+            upHarder = pontuacao + 10;
+            //isGameOver = true;
         }
         if (tempoParaGerar3 <= Time.time && isGameOver == false)
         {
@@ -72,7 +80,14 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
     public void TrocarCena2()
+    {       
+            SceneManager.LoadScene(1);
+    }
+
+    IEnumerator GameOver()
     {
-        SceneManager.LoadScene(1);
+        yield return new WaitForSeconds(0.5f);
+
+        TrocarCena2();
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class obsGarfo : MonoBehaviour
 {
 
-    public float speedE;
+    
     private GameManager gM;
 
     // Start is called before the first frame update
@@ -24,7 +24,7 @@ public class obsGarfo : MonoBehaviour
 
         //if (gM.isGameOver == false)
         //{
-            transform.position = new Vector3(transform.position.x - speedE * Time.deltaTime, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x - gM.speedE * Time.deltaTime, transform.position.y, transform.position.z);
         //}
 
 

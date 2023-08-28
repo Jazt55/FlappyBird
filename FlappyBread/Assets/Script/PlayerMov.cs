@@ -7,8 +7,11 @@ public class PlayerMov : MonoBehaviour
     private Rigidbody2D playerRb;
     public float forcaPulo;
     public GameManager gM;
-    public AudioClip morteSom;
+    public AudioClip facaSom;
     public AudioClip puloSom;
+    public AudioClip garfoSom;
+    public AudioClip chaoSom;
+    int somFoi;
     //public AudioClip
 
     // Start is called before the first frame update
@@ -33,11 +36,23 @@ public class PlayerMov : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "obstaculo")
+        if (collision.gameObject.tag == "obstaculo" && somFoi== 0)
         {
             gM.isGameOver = true;
-            gM.gMaudio.PlayOneShot(morteSom);
-            
+            gM.gMaudio.PlayOneShot(facaSom);
+            somFoi++;
+        }
+        if (collision.gameObject.tag == "chao" && somFoi == 0)
+        {
+            gM.isGameOver = true;
+            gM.gMaudio.PlayOneShot(chaoSom);
+            somFoi++;
+        }
+        if (collision.gameObject.tag == "garfo" && somFoi == 0)
+        {
+            gM.isGameOver = true;
+            gM.gMaudio.PlayOneShot(garfoSom);
+            somFoi++;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -48,4 +63,5 @@ public class PlayerMov : MonoBehaviour
 
         }
     }
+
 }

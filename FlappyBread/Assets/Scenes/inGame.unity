@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 242862746}
   m_Layer: 0
   m_Name: chao (2)
-  m_TagString: obstaculo
+  m_TagString: chao
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -527,7 +527,7 @@ GameObject:
   - component: {fileID: 748916541}
   m_Layer: 0
   m_Name: chao (3)
-  m_TagString: obstaculo
+  m_TagString: chao
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -683,8 +683,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forcaPulo: 6
   gM: {fileID: 1293055816}
-  morteSom: {fileID: 8300000, guid: f1d64d1ebdf7e734d92e554da4119a9e, type: 3}
+  facaSom: {fileID: 8300000, guid: f1d64d1ebdf7e734d92e554da4119a9e, type: 3}
   puloSom: {fileID: 8300000, guid: 59bc36ef82231094e9672d81929fed6a, type: 3}
+  garfoSom: {fileID: 8300000, guid: b560255367f221945a16a374730f5727, type: 3}
+  chaoSom: {fileID: 8300000, guid: 007c81cb7d621b44db9ed6384b9d10a3, type: 3}
 --- !u!50 &812464121
 Rigidbody2D:
   serializedVersion: 4
@@ -1209,7 +1211,7 @@ GameObject:
   - component: {fileID: 1262895245}
   m_Layer: 0
   m_Name: chao
-  m_TagString: obstaculo
+  m_TagString: chao
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1857,6 +1859,14 @@ PrefabInstance:
     - target: {fileID: 1412195326864639194, guid: 8ea7cc98ac6a4634aa519bccee0f5d08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412195326864639195, guid: 8ea7cc98ac6a4634aa519bccee0f5d08, type: 3}
+      propertyPath: speedE
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1412195326864639195, guid: 8ea7cc98ac6a4634aa519bccee0f5d08, type: 3}
+      propertyPath: speedX
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1412195326864639195, guid: 8ea7cc98ac6a4634aa519bccee0f5d08, type: 3}
       propertyPath: pontuacaoCanvas

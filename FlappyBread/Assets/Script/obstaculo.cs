@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class obstaculo : MonoBehaviour
 {
-    public float speedE;
+    
     private GameManager gM;
     
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class obstaculo : MonoBehaviour
         
         if(gM.isGameOver == false)
         {
-            transform.position = new Vector3(transform.position.x - speedE * Time.deltaTime, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x - gM.speedX * Time.deltaTime, transform.position.y, transform.position.z);
         }
             
 
