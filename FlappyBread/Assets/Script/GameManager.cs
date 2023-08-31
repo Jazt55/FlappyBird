@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -17,10 +18,13 @@ public class GameManager : MonoBehaviour
     public int pontuacao = 1;
     private float tempoParaGerar3;
     public float delay3;
+    public GameObject resumeBttn;
 
     public int upHarder;
     public float speedX;
     public float speedE;
+
+    public bool isGamePaused;
 
     public AudioSource gMaudio;
 
@@ -29,7 +33,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gMaudio = GetComponent<AudioSource>();
+       
+
         //tempoParaGerar = Time.time + delay;
         tempoParaGerar2 = Time.time + delay2;
         tempoParaGerar3 = Time.time + delay3;
@@ -44,18 +49,26 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine("GameOver");
         }
+        if(isGamePaused == true)
+        {
+            resumeBttn.SetActive(true);
+        }
+        else
+        {
+            resumeBttn.SetActive(false);
+        }
         
         
         delay3 = Random.Range(2, 5);
 
-        if (tempoParaGerar2 <= Time.time && isGameOver == false)
+        if (tempoParaGerar2 <= Time.time && isGameOver == false && isGamePaused == false)
         {
             Instantiate(manteiga, new Vector3(19, Random.Range(-2, 2),0), Quaternion.identity);
             tempoParaGerar2 = Time.time + delay2;
         }
+        
 
-
-            if (tempoParaGerar <= Time.time && isGameOver == false)
+            if (tempoParaGerar <= Time.time && isGameOver == false && isGamePaused == false)
         {
             Instantiate(enemy[Random.Range(0, enemy.Length)], new Vector3(16, Random.Range(-2,1), 0), Quaternion.identity);
             tempoParaGerar = Time.time + delay;
@@ -68,7 +81,7 @@ public class GameManager : MonoBehaviour
             upHarder = pontuacao + 10;
             //isGameOver = true;
         }
-        if (tempoParaGerar3 <= Time.time && isGameOver == false)
+        if (tempoParaGerar3 <= Time.time && isGameOver == false && isGamePaused == false)
         {
             Instantiate(garfo, new Vector3(25, Random.Range(-3, 1.5f), 0), Quaternion.identity);
             tempoParaGerar3 = Time.time + delay3;
@@ -89,5 +102,13 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         TrocarCena2();
+    }
+    public void pauseGame()
+    {
+        isGamePaused = true;
+    }
+    public void volteGame()
+    {
+        isGamePaused = false;
     }
 }

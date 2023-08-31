@@ -22,10 +22,10 @@ public class obsGarfo : MonoBehaviour
 
 
 
-        //if (gM.isGameOver == false)
-        //{
+        if ( gM.isGamePaused == false)
+        {
             transform.position = new Vector3(transform.position.x - gM.speedE * Time.deltaTime, transform.position.y, transform.position.z);
-        //}
+        }
 
 
         if (transform.position.x <= -12)
