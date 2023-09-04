@@ -18,7 +18,10 @@ public class GameManager : MonoBehaviour
     public int pontuacao = 1;
     private float tempoParaGerar3;
     public float delay3;
-    public GameObject resumeBttn;
+    
+    public GameObject pauseSceneBttn;
+    
+    public GameObject touchpulo;
 
     public int upHarder;
     public float speedX;
@@ -51,15 +54,19 @@ public class GameManager : MonoBehaviour
         }
         if(isGamePaused == true)
         {
-            resumeBttn.SetActive(true);
+            pauseSceneBttn.SetActive(true);
+            
+            touchpulo.SetActive(false);
         }
         else
         {
-            resumeBttn.SetActive(false);
+            pauseSceneBttn.SetActive(false);
+            
+            touchpulo.SetActive(true);
         }
         
         
-        delay3 = Random.Range(2, 5);
+        delay3 = Random.Range(4, 8);
 
         if (tempoParaGerar2 <= Time.time && isGameOver == false && isGamePaused == false)
         {

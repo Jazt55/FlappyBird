@@ -12,6 +12,8 @@ public class PlayerMov : MonoBehaviour
     public AudioClip garfoSom;
     public AudioClip chaoSom;
     int somFoi;
+    public ParticleSystem playerFx;
+
     //public AudioClip
 
     // Start is called before the first frame update
@@ -69,8 +71,16 @@ public class PlayerMov : MonoBehaviour
         if (collision.gameObject.tag == "Manteiga")
         {
             gM.pontuacao++;
-
+            playerFx.Play();
         }
     }
-
+    public void pulo()
+    {
+        if(gM.isGameOver == false && gM.isGamePaused == false)
+        {
+            playerRb.velocity = Vector2.zero;
+            playerRb.AddForce(new Vector2(0, forcaPulo), ForceMode2D.Impulse);
+            gM.gMaudio.PlayOneShot(puloSom);
+        }        
+    }
 }
