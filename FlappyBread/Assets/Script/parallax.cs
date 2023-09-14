@@ -19,7 +19,7 @@ public class parallax : MonoBehaviour
         {
             transform.position = new Vector2(8.1f, transform.position.y);
         }
-        if (gM.isGameOver == false && gM.isGamePaused == false )
+        if (gM.isGameOver == false && gM.isGamePaused == false && gM.delayPause <= Time.time)
         {
             transform.position = new Vector2(transform.position.x - speed * Time.deltaTime, transform.position.y);
             

@@ -34,8 +34,12 @@ public class GameManager : MonoBehaviour
     public AudioSource gMaudio;
 
     public TextMeshProUGUI pontuacaoCanvas;
+    public TextMeshProUGUI pontuacaoCanvasGameOver;
 
     public float delayPause;
+    public float timeimagePause;
+    public TextMeshProUGUI timeimagePausetxt;
+    public GameObject delayimage;
 
     // Start is called before the first frame update
     void Start()
@@ -52,9 +56,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        pontuacaoCanvas.text = pontuacao.ToString();// + "/10";
 
-        if(isGameOver == true)
+        timeimagePause = delayPause - Time.time;
+        pontuacaoCanvas.text = pontuacao.ToString();// + "/10";
+        pontuacaoCanvasGameOver.text = pontuacao.ToString();
+        timeimagePausetxt.text = timeimagePause.ToString();
+
+        if (isGameOver == true)
         {
             StartCoroutine("GameOver");
             GameOverSceneBttn.SetActive(true);
@@ -133,11 +141,13 @@ public class GameManager : MonoBehaviour
     public void pauseGame()
     {
         isGamePaused = !isGamePaused;
+        Time.timeScale = 0;
     }
     public void volteGame()
     {
         isGamePaused = false;
-        delayPause = Time.time + 3f;
+        //delayPause = Time.time + 3f;
+        Time.timeScale = 1;
     }
     public void exitGame()
     {

@@ -29,7 +29,7 @@ public class PlayerMov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Jump") && gM.isGameOver == false && gM.isGamePaused == false)
+        if (Input.GetButtonDown("Jump") && gM.isGameOver == false && gM.isGamePaused == false && gM.delayPause <= Time.time)
         {
             playerRb.velocity = Vector2.zero;
             playerRb.AddForce(new Vector2(0, forcaPulo), ForceMode2D.Impulse);
@@ -40,7 +40,7 @@ public class PlayerMov : MonoBehaviour
             playerRb.gravityScale = 0;
             playerRb.velocity = Vector2.zero;
         }
-        else
+        if(gM.isGamePaused == false && gM.delayPause <= Time.time)
         {
             playerRb.gravityScale = 1;
         }  
