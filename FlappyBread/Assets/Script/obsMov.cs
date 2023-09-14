@@ -22,7 +22,7 @@ public class obsMov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gM.isGameOver == false && gM.isGamePaused == false)
+        if (gM.isGameOver == false && gM.isGamePaused == false && gM.delayPause <= Time.time)
         {
             transform.position = new Vector3(transform.position.x - gM.speedX * Time.deltaTime, transform.position.y, transform.position.z);
             transform.position = new Vector3(transform.position.x, transform.position.y + speedY * direcao * Time.deltaTime, transform.position.z);

@@ -22,7 +22,7 @@ public class obsGarfo : MonoBehaviour
 
 
 
-        if ( gM.isGamePaused == false)
+        if ( gM.isGamePaused == false && gM.delayPause <= Time.time)
         {
             transform.position = new Vector3(transform.position.x - gM.speedE * Time.deltaTime, transform.position.y, transform.position.z);
         }

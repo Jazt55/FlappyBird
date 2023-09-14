@@ -20,7 +20,9 @@ public class GameManager : MonoBehaviour
     public float delay3;
     
     public GameObject pauseSceneBttn;
-    
+    public GameObject GameOverSceneBttn;
+    public GameObject pontuacaoimage;
+
     public GameObject touchpulo;
 
     public int upHarder;
@@ -33,6 +35,8 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI pontuacaoCanvas;
 
+    public float delayPause;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +45,8 @@ public class GameManager : MonoBehaviour
         //tempoParaGerar = Time.time + delay;
         tempoParaGerar2 = Time.time + delay2;
         tempoParaGerar3 = Time.time + delay3;
+        
+         //alt isso
     } 
 
     // Update is called once per frame
@@ -51,7 +57,15 @@ public class GameManager : MonoBehaviour
         if(isGameOver == true)
         {
             StartCoroutine("GameOver");
+            GameOverSceneBttn.SetActive(true);
+            pontuacaoimage.SetActive(false);
         }
+        else
+        {
+            GameOverSceneBttn.SetActive(false);
+            pontuacaoimage.SetActive(true);
+        }
+
         if(isGamePaused == true)
         {
             pauseSceneBttn.SetActive(true);
@@ -60,22 +74,28 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            
             pauseSceneBttn.SetActive(false);
             
             touchpulo.SetActive(true);
+            
         }
         
         
+
+        
+
+        
         delay3 = Random.Range(4, 8);
 
-        if (tempoParaGerar2 <= Time.time && isGameOver == false && isGamePaused == false)
+        if (tempoParaGerar2 <= Time.time && isGameOver == false && isGamePaused == false && delayPause <= Time.time)
         {
             Instantiate(manteiga, new Vector3(19, Random.Range(-2, 2),0), Quaternion.identity);
             tempoParaGerar2 = Time.time + delay2;
         }
         
 
-            if (tempoParaGerar <= Time.time && isGameOver == false && isGamePaused == false)
+            if (tempoParaGerar <= Time.time && isGameOver == false && isGamePaused == false && delayPause <= Time.time)
         {
             Instantiate(enemy[Random.Range(0, enemy.Length)], new Vector3(16, Random.Range(-2,1), 0), Quaternion.identity);
             tempoParaGerar = Time.time + delay;
@@ -88,7 +108,7 @@ public class GameManager : MonoBehaviour
             upHarder = pontuacao + 10;
             //isGameOver = true;
         }
-        if (tempoParaGerar3 <= Time.time && isGameOver == false && isGamePaused == false)
+        if (tempoParaGerar3 <= Time.time && isGameOver == false && isGamePaused == false && delayPause <= Time.time)
         {
             Instantiate(garfo, new Vector3(25, Random.Range(-3, 1.5f), 0), Quaternion.identity);
             tempoParaGerar3 = Time.time + delay3;
@@ -107,15 +127,20 @@ public class GameManager : MonoBehaviour
     IEnumerator GameOver()
     {
         yield return new WaitForSeconds(0.5f);
-
-        TrocarCena2();
+        
+        
     }
     public void pauseGame()
     {
-        isGamePaused = true;
+        isGamePaused = !isGamePaused;
     }
     public void volteGame()
     {
         isGamePaused = false;
+        delayPause = Time.time + 3f;
+    }
+    public void exitGame()
+    {
+        Application.Quit();
     }
 }

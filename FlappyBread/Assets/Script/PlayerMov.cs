@@ -7,6 +7,7 @@ public class PlayerMov : MonoBehaviour
     private Rigidbody2D playerRb;
     public float forcaPulo;
     public GameManager gM;
+    public AudioSource playersom;
     public AudioClip facaSom;
     public AudioClip puloSom;
     public AudioClip garfoSom;
@@ -22,6 +23,7 @@ public class PlayerMov : MonoBehaviour
         gM = GameObject.Find("GameManager").GetComponent<GameManager>();
         playerRb = GetComponent<Rigidbody2D>();
         playerRb.AddForce(new Vector2(0,  4), ForceMode2D.Impulse);
+        playersom = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,7 +33,7 @@ public class PlayerMov : MonoBehaviour
         {
             playerRb.velocity = Vector2.zero;
             playerRb.AddForce(new Vector2(0, forcaPulo), ForceMode2D.Impulse);
-            gM.gMaudio.PlayOneShot(puloSom);
+            playersom.PlayOneShot(puloSom);
         }
         if (gM.isGamePaused == true)
         {
@@ -50,19 +52,19 @@ public class PlayerMov : MonoBehaviour
         if (collision.gameObject.tag == "obstaculo" && somFoi== 0)
         {
             gM.isGameOver = true;
-            gM.gMaudio.PlayOneShot(facaSom);
+            playersom.PlayOneShot(facaSom);
             somFoi++;
         }
         if (collision.gameObject.tag == "chao" && somFoi == 0)
         {
             gM.isGameOver = true;
-            gM.gMaudio.PlayOneShot(chaoSom);
+            playersom.PlayOneShot(chaoSom);
             somFoi++;
         }
         if (collision.gameObject.tag == "garfo" && somFoi == 0)
         {
             gM.isGameOver = true;
-            gM.gMaudio.PlayOneShot(garfoSom);
+            playersom.PlayOneShot(garfoSom);
             somFoi++;
         }
     }
@@ -76,11 +78,11 @@ public class PlayerMov : MonoBehaviour
     }
     public void pulo()
     {
-        if(gM.isGameOver == false && gM.isGamePaused == false)
+        if(gM.isGameOver == false && gM.isGamePaused == false && gM.delayPause <= Time.time)
         {
             playerRb.velocity = Vector2.zero;
             playerRb.AddForce(new Vector2(0, forcaPulo), ForceMode2D.Impulse);
-            gM.gMaudio.PlayOneShot(puloSom);
+            playersom.PlayOneShot(puloSom);
         }        
     }
 }
