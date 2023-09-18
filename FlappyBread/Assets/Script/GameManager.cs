@@ -115,6 +115,7 @@ public class GameManager : MonoBehaviour
             speedE++;
             upHarder = pontuacao + 10;
             //isGameOver = true;
+            
         }
         if (tempoParaGerar3 <= Time.time && isGameOver == false && isGamePaused == false && delayPause <= Time.time)
         {

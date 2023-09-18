@@ -15,9 +15,9 @@ public class parallax : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.x <= -10.5)
+        if(transform.position.x <= -21.3)
         {
-            transform.position = new Vector2(8.1f, transform.position.y);
+            transform.position = new Vector2(19, transform.position.y);
         }
         if (gM.isGameOver == false && gM.isGamePaused == false && gM.delayPause <= Time.time)
         {
