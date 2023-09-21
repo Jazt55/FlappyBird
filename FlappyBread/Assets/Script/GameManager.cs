@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject pauseSceneBttn;
     public GameObject GameOverSceneBttn;
     public GameObject pontuacaoimage;
+    public GameObject pauseBttn;
 
     public GameObject touchpulo;
 
@@ -67,11 +68,13 @@ public class GameManager : MonoBehaviour
             StartCoroutine("GameOver");
             GameOverSceneBttn.SetActive(true);
             pontuacaoimage.SetActive(false);
+            pauseBttn.SetActive(false);
         }
         else
         {
             GameOverSceneBttn.SetActive(false);
             pontuacaoimage.SetActive(true);
+            pauseBttn.SetActive(true);
         }
 
         if(isGamePaused == true)
@@ -142,13 +145,13 @@ public class GameManager : MonoBehaviour
     public void pauseGame()
     {
         isGamePaused = !isGamePaused;
-        Time.timeScale = 0;
+        
     }
     public void volteGame()
     {
         isGamePaused = false;
         //delayPause = Time.time + 3f;
-        Time.timeScale = 1;
+        
     }
     public void exitGame()
     {
