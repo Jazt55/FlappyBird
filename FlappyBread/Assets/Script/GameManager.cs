@@ -127,13 +127,17 @@ public class GameManager : MonoBehaviour
         }     
     }
 
-    public void TrocarCena()
+    public void TrocarCenaInicio()
     {
         SceneManager.LoadScene(0);
     }
-    public void TrocarCena2()
+    public void TrocarCenaInstrucoes()
     {       
             SceneManager.LoadScene(1);
+    }
+    public void TrocarCenaGame()
+    {
+        SceneManager.LoadScene(2);
     }
 
     IEnumerator GameOver()
