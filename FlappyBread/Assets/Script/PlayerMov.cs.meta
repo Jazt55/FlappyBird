@@ -3,7 +3,14 @@ guid: 8bbb42a4053c6ef4e8745d645ccc91a7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - gM: {instanceID: 0}
+  - playersom: {instanceID: 0}
+  - facaSom: {instanceID: 0}
+  - puloSom: {fileID: 8300000, guid: 59bc36ef82231094e9672d81929fed6a, type: 3}
+  - garfoSom: {fileID: 8300000, guid: b560255367f221945a16a374730f5727, type: 3}
+  - chaoSom: {instanceID: 0}
+  - playerFx: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -115,8 +115,8 @@ public class GameManager : MonoBehaviour
         if(pontuacao >= upHarder)
         {
             speedX++;
-            speedE++;
-            upHarder = pontuacao + 10;
+            speedE+= 3;
+            upHarder += 2;
             //isGameOver = true;
             
         }

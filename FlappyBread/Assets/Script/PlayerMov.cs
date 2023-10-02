@@ -8,10 +8,7 @@ public class PlayerMov : MonoBehaviour
     public float forcaPulo;
     public GameManager gM;
     public AudioSource playersom;
-    public AudioClip facaSom;
-    public AudioClip puloSom;
-    public AudioClip garfoSom;
-    public AudioClip chaoSom;
+    public AudioClip facaSom, puloSom, garfoSom,mantSom, chaoSom;
     int somFoi;
     public ParticleSystem playerFx;
 
@@ -42,7 +39,7 @@ public class PlayerMov : MonoBehaviour
         }
         if(gM.isGamePaused == false && gM.delayPause <= Time.time)
         {
-            playerRb.gravityScale = 1;
+            playerRb.gravityScale = 1.2f;
         }  
        
     }
@@ -74,6 +71,7 @@ public class PlayerMov : MonoBehaviour
         {
             gM.pontuacao++;
             playerFx.Play();
+            playersom.PlayOneShot(mantSom);
         }
     }
     public void pulo()
