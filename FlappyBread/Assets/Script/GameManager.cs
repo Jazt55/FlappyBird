@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public bool isGamePaused;
 
     public AudioSource gMaudio;
+    public AudioClip musFundo;
 
     public TextMeshProUGUI pontuacaoCanvas;
     public TextMeshProUGUI pontuacaoCanvasGameOver;
@@ -45,8 +46,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
 
+        gMaudio = GetComponent<AudioSource>();
         //tempoParaGerar = Time.time + delay;
         tempoParaGerar2 = Time.time + delay2;
         tempoParaGerar3 = Time.time + delay3;
@@ -69,12 +70,15 @@ public class GameManager : MonoBehaviour
             GameOverSceneBttn.SetActive(true);
             pontuacaoimage.SetActive(false);
             pauseBttn.SetActive(false);
+            
+            gMaudio.Stop();
         }
         else
         {
             GameOverSceneBttn.SetActive(false);
             pontuacaoimage.SetActive(true);
             pauseBttn.SetActive(true);
+            //gMaudio.Play();
         }
 
         if(isGamePaused == true)
@@ -122,7 +126,7 @@ public class GameManager : MonoBehaviour
         }
         if (tempoParaGerar3 <= Time.time && isGameOver == false && isGamePaused == false && delayPause <= Time.time)
         {
-            Instantiate(garfo, new Vector3(25, Random.Range(-3, 1.5f), 0), Quaternion.identity);
+            Instantiate(garfo, new Vector3(25, Random.Range(-6, 6), 0), Quaternion.identity);
             tempoParaGerar3 = Time.time + delay3;
         }     
     }
