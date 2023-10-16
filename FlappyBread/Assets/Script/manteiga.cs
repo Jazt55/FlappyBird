@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class manteiga : MonoBehaviour
 {
-    public float speedE;
+    
     private GameManager gM;
     
     // Start is called before the first frame update
@@ -21,7 +21,7 @@ public class manteiga : MonoBehaviour
             transform.position = new Vector3(transform.position.x - gM.speedX * Time.deltaTime, transform.position.y, transform.position.z);
         }
 
-        if (transform.position.x <= -12)
+        if (transform.position.x <= -18)
         {
             Destroy(gameObject);
         }

@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public int upHarder;
     public float speedX;
     public float speedE;
+    public float speedP = 1;
 
     public bool isGamePaused;
 
@@ -42,6 +43,9 @@ public class GameManager : MonoBehaviour
     public float timeimagePause;
     public TextMeshProUGUI timeimagePausetxt;
     public GameObject delayimage;
+
+    public int HighScore;
+    public TextMeshProUGUI HighScoreCanvasGameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -62,6 +66,7 @@ public class GameManager : MonoBehaviour
         timeimagePause = delayPause - Time.time;
         pontuacaoCanvas.text = pontuacao.ToString();// + "/10";
         pontuacaoCanvasGameOver.text = pontuacao.ToString();
+        HighScoreCanvasGameOver.text = HighScore.ToString();
         timeimagePausetxt.text = timeimagePause.ToString();
 
         if (isGameOver == true)
@@ -95,9 +100,9 @@ public class GameManager : MonoBehaviour
             touchpulo.SetActive(true);
             
         }
-        
-        
 
+
+        
         
 
         
@@ -118,17 +123,27 @@ public class GameManager : MonoBehaviour
         }
         if(pontuacao >= upHarder)
         {
-            speedX++;
-            speedE+= 3;
-            upHarder += 2;
+            speedX+= 0.5f;
+            speedE+= 1.5f;
+            speedP+= 0.2f;
+            upHarder += 1;
             //isGameOver = true;
             
         }
         if (tempoParaGerar3 <= Time.time && isGameOver == false && isGamePaused == false && delayPause <= Time.time)
         {
-            Instantiate(garfo, new Vector3(25, Random.Range(-6, 6), 0), Quaternion.identity);
+            Instantiate(garfo, new Vector3(40, Random.Range(-6, 6), 0), Quaternion.identity);
             tempoParaGerar3 = Time.time + delay3;
-        }     
+        }
+        if(pontuacao > HighScore)
+        {
+            SalvarScore();
+        }
+        
+
+        MostrarScore();
+
+
     }
 
     public void TrocarCenaInicio()
@@ -164,5 +179,13 @@ public class GameManager : MonoBehaviour
     public void exitGame()
     {
         Application.Quit();
+    }
+    public void SalvarScore()
+    {
+        PlayerPrefs.SetInt("HighScore", pontuacao);
+    }
+    public void MostrarScore()
+    {
+        HighScore = PlayerPrefs.GetInt("HighScore");
     }
 }

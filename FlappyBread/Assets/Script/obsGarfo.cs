@@ -28,7 +28,7 @@ public class obsGarfo : MonoBehaviour
         }
 
 
-        if (transform.position.x <= -12)
+        if (transform.position.x <= -18)
         {
             Destroy(gameObject);
         }

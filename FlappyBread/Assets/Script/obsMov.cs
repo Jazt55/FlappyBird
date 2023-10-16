@@ -28,7 +28,7 @@ public class obsMov : MonoBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y + speedY * direcao * Time.deltaTime, transform.position.z);
         }
 
-        if (transform.position.x <= -12)
+        if (transform.position.x <= -18)
         {
             Destroy(gameObject);
         }
