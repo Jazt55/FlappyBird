@@ -47,6 +47,10 @@ public class GameManager : MonoBehaviour
     public int HighScore;
     public TextMeshProUGUI HighScoreCanvasGameOver;
 
+
+    //public InputField playerName;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -101,11 +105,11 @@ public class GameManager : MonoBehaviour
             
         }
 
+        //GetComponent<Salvar>().CheckForHighScore(pontuacao, playerName.text);
 
-        
-        
 
-        
+
+
         delay3 = Random.Range(4, 8);
 
         if (tempoParaGerar2 <= Time.time && isGameOver == false && isGamePaused == false && delayPause <= Time.time)
