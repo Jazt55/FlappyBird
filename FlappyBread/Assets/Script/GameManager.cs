@@ -14,7 +14,9 @@ public class GameManager : MonoBehaviour
     public float delay;
     private float tempoParaGerar;
     public float delay2;
-    private float tempoParaGerar2;
+    public float delay4;
+    public float tempoParaGerar2;
+    public float tempoParaGerar4;
     public int pontuacao = 1;
     private float tempoParaGerar3;
     public float delay3;
@@ -48,6 +50,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI HighScoreCanvasGameOver;
 
 
+    public GameObject escudoobj;
+
     //public InputField playerName;
     
 
@@ -58,6 +62,7 @@ public class GameManager : MonoBehaviour
         gMaudio = GetComponent<AudioSource>();
         //tempoParaGerar = Time.time + delay;
         tempoParaGerar2 = Time.time + delay2;
+        tempoParaGerar4 = Time.time + delay4;
         tempoParaGerar3 = Time.time + delay3;
         
          //alt isso
@@ -116,6 +121,10 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(manteiga, new Vector3(19, Random.Range(-2, 2),0), Quaternion.identity);
             tempoParaGerar2 = Time.time + delay2;
+        }if (tempoParaGerar4 <= Time.time && isGameOver == false && isGamePaused == false && delayPause <= Time.time)
+        {
+            Instantiate(escudoobj, new Vector3(19, Random.Range(-2, 2),0), Quaternion.identity);
+            tempoParaGerar4 = Time.time + delay4;
         }
         
 
@@ -130,6 +139,9 @@ public class GameManager : MonoBehaviour
             speedX+= 0.5f;
             speedE+= 1.5f;
             speedP+= 0.2f;
+            delay3 -= 0.1f;
+            delay -= 0.1f;
+
             upHarder += 1;
             //isGameOver = true;
             

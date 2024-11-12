@@ -8,9 +8,13 @@ public class PlayerMov : MonoBehaviour
     public float forcaPulo;
     public GameManager gM;
     public AudioSource playersom;
-    public AudioClip facaSom, puloSom, garfoSom,mantSom, chaoSom;
+    public AudioClip facaSom, puloSom, garfoSom,mantSom, chaoSom,escudoSom;
     int somFoi;
     public ParticleSystem playerFx;
+
+
+    public GameObject imgEscudo;
+    public bool escudo;
 
     //public AudioClip
 
@@ -21,6 +25,7 @@ public class PlayerMov : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         playerRb.AddForce(new Vector2(0,  4), ForceMode2D.Impulse);
         playersom = GetComponent<AudioSource>();
+        imgEscudo.SetActive(false);
     }
 
     // Update is called once per frame
@@ -46,24 +51,33 @@ public class PlayerMov : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "obstaculo" && somFoi== 0)
+        if(escudo == false)
         {
-            gM.isGameOver = true;
-            playersom.PlayOneShot(facaSom);
-            somFoi++;
-        }
-        if (collision.gameObject.tag == "chao" && somFoi == 0)
+            if (collision.gameObject.tag == "obstaculo" && somFoi == 0)
+            {
+                gM.isGameOver = true;
+                playersom.PlayOneShot(facaSom);
+                somFoi++;
+            }
+            if (collision.gameObject.tag == "chao" && somFoi == 0)
+            {
+                gM.isGameOver = true;
+                playersom.PlayOneShot(chaoSom);
+                somFoi++;
+            }
+            if (collision.gameObject.tag == "garfo" && somFoi == 0)
+            {
+                gM.isGameOver = true;
+                playersom.PlayOneShot(garfoSom);
+                somFoi++;
+            }
+        }else if(escudo == true)
         {
-            gM.isGameOver = true;
-            playersom.PlayOneShot(chaoSom);
-            somFoi++;
+            escudo = false;
+            playersom.PlayOneShot(escudoSom);
+            imgEscudo.SetActive(false);
         }
-        if (collision.gameObject.tag == "garfo" && somFoi == 0)
-        {
-            gM.isGameOver = true;
-            playersom.PlayOneShot(garfoSom);
-            somFoi++;
-        }
+       
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -72,6 +86,12 @@ public class PlayerMov : MonoBehaviour
             gM.pontuacao++;
             playerFx.Play();
             playersom.PlayOneShot(mantSom);
+        }
+        if(collision.gameObject.tag == "escudo")
+        {
+            escudo=true;
+            playersom.PlayOneShot(escudoSom);
+            imgEscudo.SetActive(true);
         }
     }
     public void pulo()
